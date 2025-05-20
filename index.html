@@ -1,280 +1,250 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Julien</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        *{
-            margin: 0; 
-            padding: 0 ;
-        }
-        html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background-color: beige;
+      color: #333;
+      line-height: 1.6;
+    }
 
-        body {
-  overflow: auto;
-  padding: 70px 10px; /* haut/bas 70px, gauche/droite 10px */
-  margin: 0;           /* enlève le margin */
-  display: flex;
-  flex-direction: column;
-  background-color: beige;
-}
-        header {
-            background-color: rgb(129, 224, 224);
-            width: 100%;
-            height: 300px;
-            text-align: center; 
-        }
-        nav {
-            display: flex;
-            flex-direction: column; 
-        }
-        ul li  {
-            display: flex;
-            padding: 20px ;
-            gap: 20px;
-            justify-content: flex-end;
-        }
-        a{
-            text-decoration: none;
-        }
-        .titre {
-            display: flex;
-            flex-direction:column;
-            padding-left: 50px;
-            justify-self: center;
-            align-items: center;     
-        }
-        .titre h1 {
-            position: relative;
-            text-align: center;            
-            font-size: 40px;            
-             padding: 10px;   
-        }
-        .titre a {
-            width: 8%;
-             margin: 20px;
-            border: 1px solid blue;
-            padding: 10px;
-            border-radius: 10%;
-            color: white;
-            background-color: rgb(31, 114, 223);
-        }
-        .aPropos {
-            padding-top: 20px;
-            background-color: white;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            width: 100%;
-            height: 100%;    
-        }
-        .avatar {
-             flex: 1;
-             text-align: center;
-             align-items: center;
-             padding:50px
-        }
-        i {
-            font-size:200px;
-            color: rgb(129, 224, 224);
-        }
-        .aPropos p {
-           text-align: center;   
-        }
-        .aProposTitre {
-            flex: 2;
-            display: flex;
-            align-items: first center;
-            font-size: 30px;
-            text-align: center;
-            flex-direction: column;
-        }
-        .projects {
-            display: flex ;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            background-color: aqua;
-            height: 200px;     
-        }
-        img{
-            width: 80px;
-            height: auto;
-        }
-        .card {
-           width: 100%;
-            display: grid; 
-            height: 100% ;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid rgba(48, 61, 61, 0.2);
-            background-color: rgb(204, 211, 211);
-        } 
-        h2 {
-            font-size: 30px;
-            padding: 10px;
-        }
-        .services {
-           
-            display: flex ;
-            gap: 20px; 
-        }
-        .contact {
-           display: flex;
-           flex-direction: column;
-            justify-content: start;
-            align-items: center;
-            border: 1px solid rgba(48, 61, 61, 0.2);
-           width: 100%;
-         background-color: rgba(204, 211, 211,0.5);
-         height: 300px;
-        }
-        .contact li {
-         display: flex;
-         flex-direction: column;
-         justify-content: start;
-         align-items: start;
-         color: red;
-         text-decoration: solid;
-         list-style:circle;
-         padding: 35px;
-         
-         
-        }
-        .contact ul {
-            text-align: start;
-        }
-        .contact-form {
-           
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            width: 50%;
-            
-            gap: 20px;
+    header {
+      background-color: rgb(129, 224, 224);
+      padding: 20px;
+      text-align: center;
+    }
 
-        
-        }
-        aside ul {
-    list-style-type: disc; 
-    padding-left: 20px;  
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
 
-aside li  {
-    margin-bottom: 10px; 
-}
-        @media screen and (max-width:768px) {
-            body{
-                height: 100%;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-            }
-                html, body {
-                    overflow-x: hidden;
-    
-            }
-            .aPropos,
-            .projects,
-            .services {
-                 flex-direction: column;
-                 align-items: center;
-                 justify-content: center;
-                    }
-                     i {
-            font-size:20px;
-            color: rgb(129, 224, 224);
-        }
-        .titre {
+    nav ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
 
-        }
-        }
-    </style>
+    .titre {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .titre h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .titre a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: rgb(31, 114, 223);
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .aPropos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .aPropos i {
+      font-size: 80px;
+      color: rgb(129, 224, 224);
+    }
+
+    .aProposTitre {
+      text-align: center;
+    }
+
+    .aProposTitre h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgb(204, 211, 211);
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .card img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .services {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .contact {
+      background-color: rgba(204, 211, 211, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .contact ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      background-color: rgb(31, 114, 223);
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .aPropos {
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+      }
+
+      .projects {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .services {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .contact,
+      .contact-form {
+        width: 45%;
+      }
+
+      .services {
+        align-items: start;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="headerr">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#">About</a>
-                        <a href="#">Projects</a>
-                        <a href="#">Services</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="titre">
-            <H1>Bonjour, je suis Julien - <br>
-            Développeur Web en devenir</H1>
-            <a href="index1.html" target="_blank">Voir mes projets </a>
-        </div>
-    </header>
-    <main>
-        <section>
-            <div class="aPropos">
-                <div class="avatar">
-                    <i class="fa-solid fa-circle-user"></i>
-                </div>
-                <div class="aProposTitre">
-                    <h2>À propos de moi</h2>
-                    <p>Je poursuis mon objectif de devenir développeur web full-stack. 
-                        J’aime créer des sites web interactifs et résoudre des problèmes avec du code.</p>
-                </div>
-            </div>
-            <h2>Mes Services</h2>
-    <div class="projects">
-           
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Projets</a></li>
+        <li><a href="#">Services</a></li>
+      </ul>
+    </nav>
+    <div class="titre">
+      <h1>Bonjour, je suis Julien<br>Développeur Web en devenir</h1>
+      <a href="index1.html" target="_blank">Voir mes projets</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="aPropos">
+      <div class="avatar">
+        <i class="fa-solid fa-circle-user"></i>
+      </div>
+      <div class="aProposTitre">
+        <h2>À propos de moi</h2>
+        <p>Je poursuis mon objectif de devenir développeur web full-stack. 
+        J’aime créer des sites web interactifs et résoudre des problèmes avec du code.</p>
+      </div>
+    </section>
+
+    <section class="projects">
       <div class="card">
-       
-        <img src="site-internet.png" alt="SiteWeb">
-        <h3>Site-internet</h3>
+        <img src="site-internet.png" alt="Site Web">
+        <h3>Site Internet</h3>
         <p>HTML, CSS, JavaScript</p>
       </div>
       <div class="card">
-         <img src="portfolio.png" alt="portfolio">
+        <img src="portfolio.png" alt="Portfolio">
         <h3>Site Portfolio</h3>
         <p>Section personnelle</p>
       </div>
       <div class="card">
-        <img src="circuit-imprime.png" alt="circuit imprimé" >
-        <h3>Projet Microcontrôleurs</h3>
+        <img src="circuit-imprime.png" alt="Projet Microcontrôleur">
+        <h3>Microcontrôleurs</h3>
         <p>ATtiny, PIC, capteurs</p>
       </div>
-    </div>
-        </section>
-    </main>
-    <aside>
-          <h2>Mes Services</h2>
-        <section id="services" class="services">
-   
-    <div class="contact">
-      <ul>
-        <li>Création de sites vitrines</li>
-        <li>Intégration de maquettes Figma en HTML/CSS/JS</li>
-        <li>Débogage de sites existants</li>
-      </ul>
-    </div>
+    </section>
+
+    <section class="services">
       <div class="contact">
-      <form class="contact-form" id="contact">
-        <h3>Contact</h3>
-        <input type="text" placeholder="Nom" required />
-        <input type="email" placeholder="Email" required />
-        <textarea rows="5" placeholder="Message" required></textarea>
-        <button type="submit">Envoyer</button>
-      </form>
-    </div>
-  </section>
-    </aside>
+        <h2>Mes Services</h2>
+        <ul>
+          <li>Création de sites vitrines</li>
+          <li>Intégration de maquettes Figma</li>
+          <li>Débogage de sites</li>
+        </ul>
+      </div>
+      <div class="contact">
+        <form class="contact-form">
+          <h2>Contact</h2>
+          <input type="text" placeholder="Nom" required>
+          <input type="email" placeholder="Email" required>
+          <textarea rows="4" placeholder="Votre message..." required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
 </body>
 </html>
